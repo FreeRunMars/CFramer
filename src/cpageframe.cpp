@@ -8,7 +8,7 @@ CPageFrame::CPageFrame(QWidget *parent) : QFrame(parent)
 
 void CPageFrame::initUi()
 {
-    this->setFixedHeight(680);
+    //this->setAutoFillBackground(true);
     this->setStyleSheet("background-color:lightgrey;");
 }
 

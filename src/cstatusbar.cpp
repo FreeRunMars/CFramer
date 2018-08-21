@@ -7,7 +7,8 @@ CStatusBar::CStatusBar(QWidget *parent) : QFrame(parent)
 
 void CStatusBar::initUi()
 {
-    this->setFixedHeight(30);
+    this->setMinimumHeight(30);
+    this->setMaximumHeight(30);
     this->setStyleSheet("background-color:lightgreen;");
 }
 

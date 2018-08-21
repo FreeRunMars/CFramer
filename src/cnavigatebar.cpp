@@ -7,6 +7,7 @@ CNavigateBar::CNavigateBar(QWidget *parent) : QFrame(parent)
 
 void CNavigateBar::initUi()
 {
-    this->setFixedHeight(60);
+    this->setMinimumHeight(60);
+    this->setMaximumHeight(60);
     this->setStyleSheet("background-color:lightblue;");
 }

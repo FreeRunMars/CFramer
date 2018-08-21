@@ -68,9 +68,16 @@ void CTitleBar::mouseReleaseEvent(QMouseEvent *event)
     qDebug() << "titleBar mousePressEvent releasedPoint: " << event->globalPos();
 }
 
+void CTitleBar::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    qDebug() << "titleBar mouseDoubleClickEvent";
+
+}
+
 void CTitleBar::initUi()
 {
-    this->setFixedHeight(30);
+    this->setMinimumHeight(30);
+    this->setMaximumHeight(30);
     this->setStyleSheet("background-color:black;");
 }
 
