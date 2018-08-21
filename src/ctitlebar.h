@@ -31,6 +31,7 @@ private:
     void initData();
 
     QPoint m_pressedPoint;
+    QPoint m_lastMousePos;
     bool m_moving;
 };
 

@@ -11,28 +11,41 @@ void CTitleBar::mouseMoveEvent(QMouseEvent *event)
     qDebug() << "titleBar mouseMoveEvent";
     if(event->buttons() == Qt::LeftButton && m_moving)
     {
+        QPoint widgetOldPos;
+        QPoint mousePos = event->globalPos();
+        int mouseRelativeX = mousePos.x() - m_lastMousePos.x();
+        int mouseRelativeY = mousePos.y() - m_lastMousePos.y();
+        qDebug() << "mouse pos: " << mousePos
+                 << "last mouse pos: " << m_lastMousePos
+                 << "relative x: " << mouseRelativeX
+                 << "relative y: " << mouseRelativeY;
+
         QWidget *parentWidget = this->parentWidget();
         qDebug() << "titleBar's parentWidget: " << parentWidget;
         if(parentWidget){
             QWidget *grandParent = parentWidget->parentWidget();
             qDebug() << "titleBar's grandParent: " << grandParent;
             if(grandParent){
-                qDebug() << "grandParentPos before move: " << grandParent->pos();
-                grandParent->move(event->globalPos());
+                widgetOldPos = grandParent->pos();
+                qDebug() << "grandParentPos before move: " << widgetOldPos;
+                grandParent->move(widgetOldPos.x() + mouseRelativeX,
+                                  widgetOldPos.y() + mouseRelativeY);
                 qDebug() << "grandParentPos after move: " << grandParent->pos();
-                qDebug() << "mouse pos: " << event->globalPos();
             }else{
-                qDebug() << "parentPos before move: " << parentWidget->pos();
-                parentWidget->move(event->globalPos());
+                widgetOldPos = parentWidget->pos();
+                qDebug() << "parentPos before move: " << widgetOldPos;
+                parentWidget->move(widgetOldPos.x() + mouseRelativeX,
+                                   widgetOldPos.y() + mouseRelativeY);
                 qDebug() << "parentPos after move: " << parentWidget->pos();
-                qDebug() << "mouse pos: " << event->globalPos();
             }
         }else{
-            qDebug() << "titleBar before move: " << this->pos();
-            this->move(event->globalPos());
+            widgetOldPos = this->pos();
+            qDebug() << "titleBar before move: " << widgetOldPos;
+            this->move(widgetOldPos.x() + mouseRelativeX,
+                       widgetOldPos.y() + mouseRelativeY);
             qDebug() << "titleBar after move: " << this->pos();
-            qDebug() << "mouse pos: " << event->globalPos();
         }
+        m_lastMousePos = mousePos;
     }
 }
 
@@ -43,6 +56,7 @@ void CTitleBar::mousePressEvent(QMouseEvent *event)
     {
         m_moving = true;
         m_pressedPoint = event->globalPos();
+        m_lastMousePos = m_pressedPoint;
         qDebug() << "titleBar mousePressEvent pressedPoint: " << m_pressedPoint;
     }
 }
