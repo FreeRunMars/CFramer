@@ -32,7 +32,10 @@ SOURCES += main.cpp\
             worker.cpp \
     ctitlebar.cpp \
     cnavigatebar.cpp \
-    cstatusbar.cpp
+    cstatusbar.cpp \
+    cpushbutton.cpp \
+    ccenterframe.cpp \
+    cpageframe.cpp
 
 HEADERS  += cmainwindow.h\
             signalmanager.h\
@@ -40,4 +43,7 @@ HEADERS  += cmainwindow.h\
             worker.h \
     ctitlebar.h \
     cnavigatebar.h \
-    cstatusbar.h
+    cstatusbar.h \
+    cpushbutton.h \
+    ccenterframe.h \
+    cpageframe.h

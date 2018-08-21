@@ -2,9 +2,9 @@
 #define CNAVIGATEBAR_H
 
 #include <QObject>
-#include <QWidget>
+#include <QFrame>
 
-class CNavigateBar : public QWidget
+class CNavigateBar : public QFrame
 {
     Q_OBJECT
 public:
@@ -13,6 +13,10 @@ public:
 signals:
 
 public slots:
+
+private:
+    void initUi();
+    void initConnect();
 };
 
 #endif // CNAVIGATEBAR_H

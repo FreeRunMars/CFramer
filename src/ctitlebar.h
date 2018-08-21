@@ -1,10 +1,16 @@
 #ifndef CTITLEBAR_H
 #define CTITLEBAR_H
 
-#include <QObject>
-#include <QWidget>
+#include "Logger.h"
+#include "logmanager.h"
 
-class CTitleBar : public QWidget
+#include <QObject>
+#include <QFrame>
+#include <QDesktopWidget>
+#include <QMouseEvent>
+#include <QApplication>
+
+class CTitleBar : public QFrame
 {
     Q_OBJECT
 public:
@@ -13,6 +19,19 @@ public:
 signals:
 
 public slots:
+
+protected:
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
+
+private:
+    void initUi();
+    void initConnect();
+    void initData();
+
+    QPoint m_pressedPoint;
+    bool m_moving;
 };
 
 #endif // CTITLEBAR_H

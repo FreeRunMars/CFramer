@@ -2,9 +2,9 @@
 #define CSTATUSBAR_H
 
 #include <QObject>
-#include <QWidget>
+#include <QFrame>
 
-class CStatusBar : public QWidget
+class CStatusBar : public QFrame
 {
     Q_OBJECT
 public:
@@ -13,6 +13,10 @@ public:
 signals:
 
 public slots:
+
+private:
+    void initUi();
+    void initConnect();
 };
 
 #endif // CSTATUSBAR_H

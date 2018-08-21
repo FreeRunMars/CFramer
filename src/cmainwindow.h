@@ -2,11 +2,8 @@
 #define CMAINWINDOW_H
 
 #include "signalmanager.h"
-#include "ctitlebar.h"
-#include "cnavigatebar.h"
-#include "cstatusbar.h"
+#include "ccenterframe.h"
 #include <QMainWindow>
-#include <QVBoxLayout>
 
 class CMainWindow : public QMainWindow
 {
@@ -23,11 +20,6 @@ public slots:
 private:
     void initUi();
     void initConnect();
-
-    CTitleBar *m_titleBar;
-    CNavigateBar *m_navigateBar;
-    CStatusBar *m_statusBar;
-    QVBoxLayout *m_layout;
 };
 
 #endif // CMAINWINDOW_H
