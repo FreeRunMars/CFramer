@@ -30,20 +30,20 @@ SOURCES += main.cpp\
             cmainwindow.cpp\
             controller.cpp\
             worker.cpp \
-    ctitlebar.cpp \
     cnavigatebar.cpp \
     cstatusbar.cpp \
     cpushbutton.cpp \
     ccenterframe.cpp \
-    cpageframe.cpp
+    cpageframe.cpp \
+    ctitlebar.cpp
 
 HEADERS  += cmainwindow.h\
             signalmanager.h\
             controller.h\
             worker.h \
-    ctitlebar.h \
     cnavigatebar.h \
     cstatusbar.h \
     cpushbutton.h \
     ccenterframe.h \
-    cpageframe.h
+    cpageframe.h \
+    ctitlebar.h

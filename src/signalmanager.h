@@ -14,6 +14,7 @@ public:
 
 signals:
     //to do
+    void changeStyleSheet(const QString &s);
 
 private:
     explicit SignalManager(QObject *parent = 0){Q_UNUSED(parent);}

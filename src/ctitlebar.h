@@ -1,14 +1,10 @@
 #ifndef CTITLEBAR_H
 #define CTITLEBAR_H
 
-#include "Logger.h"
-#include "logmanager.h"
+#include "signalmanager.h"
 
-#include <QObject>
 #include <QFrame>
-#include <QDesktopWidget>
 #include <QMouseEvent>
-#include <QApplication>
 
 class CTitleBar : public QFrame
 {
@@ -19,6 +15,7 @@ public:
 signals:
 
 public slots:
+    void onChangeStyleSheet(const QString &s);
 
 protected:
     void mouseMoveEvent(QMouseEvent *event) override;

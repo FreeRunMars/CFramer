@@ -4,6 +4,12 @@ CTitleBar::CTitleBar(QWidget *parent) : QFrame(parent)
 {
     initData();
     initUi();
+    initConnect();
+}
+
+void CTitleBar::onChangeStyleSheet(const QString &s)
+{
+    this->setStyleSheet(s);
 }
 
 void CTitleBar::mouseMoveEvent(QMouseEvent *event)
@@ -51,7 +57,8 @@ void CTitleBar::initUi()
 
 void CTitleBar::initConnect()
 {
-
+    connect(SignalManager::instance(), &SignalManager::changeStyleSheet,
+            this, &CTitleBar::onChangeStyleSheet);
 }
 
 void CTitleBar::initData()
