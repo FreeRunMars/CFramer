@@ -8,7 +8,15 @@
 class CPushButton : public QPushButton
 {
 public:
-    CPushButton();
+    explicit CPushButton(QWidget *parent);
+
+signals:
+
+public slots:
+
+private:
+    void initUi();
+    void initConnect();
 };
 
 #endif // CPUSHBUTTON_H

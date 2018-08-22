@@ -31,8 +31,8 @@ private:
     void initConnect();
     void initData();
 
-    QPoint m_pressedPoint;
-    QPoint m_lastMousePos;
+    QPoint m_pressPoint;
+    QPoint m_relativeDragPoint;
     bool m_moving;
 };
 
