@@ -1,7 +1,9 @@
 HEADERS += \
     $$PWD/ctoolbutton.h \
-    $$PWD/ctitlebar.h
+    $$PWD/cmainwindow.h \
+    $$PWD/cqtitlebar.h
 
 SOURCES += \
     $$PWD/ctoolbutton.cpp \
-    $$PWD/ctitlebar.cpp
+    $$PWD/cmainwindow.cpp \
+    $$PWD/cqtitlebar.cpp
