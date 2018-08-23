@@ -1,7 +1,7 @@
 #include "cmainwindow.h"
 
 CMainWindow::CMainWindow(QWidget *parent)
-    : QMainWindow(parent)
+    : QFrame(parent)
 {
     initUi();
     initConnect();
@@ -58,19 +58,24 @@ void CMainWindow::closeWindow()
 
 void CMainWindow::initUi()
 {
-    this->setMinimumSize(1200, 800);
-    this->setWindowFlags(Qt::FramelessWindowHint);
+    setMinimumSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+    setWindowFlags(Qt::FramelessWindowHint);
 
     m_titleBar = new CTitleBar(this);
-    m_centerFrame = new CCenterFrame(this);
+    m_navigateWidget = new CNavigateWidget(this);
     m_statusBar = new CStatusBar(this);
 
-    m_titleBar->move(0, 0);
-    this->setCentralWidget(centerFrame);
-    this->setStatusBar(m_statusBar);
+    m_titleBar->setObjectName("TitleBar");
+    m_navigateWidget->setObjectName("NavigateWidget");
+    m_statusBar->setObjectName("StatusBar");
 
-    this->layout()->setContentsMargins(0, 0, 0, 0);
-    this->layout()->setSpacing(0);
+    m_layout = new QVBoxLayout(this);
+    m_layout->setContentsMargins(0, 0, 0, 0);
+    m_layout->setSpacing(0);
+    m_layout->addWidget(m_titleBar);
+    m_layout->addWidget(m_navigateWidget);
+    m_layout->addWidget(m_statusBar);
+    setLayout(m_layout);
 }
 
 void CMainWindow::initConnect()

@@ -1,14 +1,14 @@
 #ifndef CNAVIGATEBAR_H
 #define CNAVIGATEBAR_H
 
-#include <QObject>
 #include <QFrame>
+#include <QPushButton>
 
 class CNavigateBar : public QFrame
 {
     Q_OBJECT
 public:
-    explicit CNavigateBar(QWidget *parent = 0);
+    explicit CNavigateBar(QWidget *parent);
 
 signals:
 

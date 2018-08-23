@@ -2,15 +2,20 @@
 #define CMAINWINDOW_H
 
 #include "ctitlebar.h"
-#include "ccenterframe.h"
+#include "cnavigatewidget.h"
 #include "cstatusbar.h"
-#include <QMainWindow>
 
-class CMainWindow : public QMainWindow
+#include <QFrame>
+#include <QVBoxLayout>
+
+class CMainWindow : public QFrame
 {
     Q_OBJECT
 
 public:
+    const int WINDOW_HEIGHT = 800;
+    const int WINDOW_WIDTH = 1200;
+
     CMainWindow(QWidget *parent = 0);
     ~CMainWindow();
 
@@ -33,8 +38,9 @@ private:
     void initData();
 
     CTitleBar *m_titleBar;
-    CCenterFrame *m_centerFrame;
+    CNavigateWidget *m_navigateWidget;
     CStatusBar *m_statusBar;
+    QVBoxLayout *m_layout;
 };
 
 #endif // CMAINWINDOW_H

@@ -1,5 +1,3 @@
-INCLUDEPATH += $$PWD
-
 HEADERS += \
     $$PWD/RollingFileAppender.h \
     $$PWD/Logger.h \

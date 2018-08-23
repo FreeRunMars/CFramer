@@ -13,6 +13,7 @@ TEMPLATE = app
 
 include("./utils/utils.pri")
 include("./cutelogger/cutelogger.pri")
+include("./backend/backend.pri")
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
@@ -26,24 +27,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 
-SOURCES += main.cpp\
-            cmainwindow.cpp\
-            controller.cpp\
-            worker.cpp \
+SOURCES += main.cpp \
+    cmainwindow.cpp \
     cnavigatebar.cpp \
     cstatusbar.cpp \
     cpushbutton.cpp \
-    ccenterframe.cpp \
-    cpageframe.cpp \
-    ctitlebar.cpp
+    ctitlebar.cpp \
+    cnavigatewidget.cpp
 
-HEADERS  += cmainwindow.h\
-            signalmanager.h\
-            controller.h\
-            worker.h \
+HEADERS  += cmainwindow.h \
     cnavigatebar.h \
     cstatusbar.h \
     cpushbutton.h \
-    ccenterframe.h \
-    cpageframe.h \
-    ctitlebar.h
+    ctitlebar.h \
+    cnavigatewidget.h
