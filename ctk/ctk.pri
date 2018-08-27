@@ -2,7 +2,6 @@ INCLUDEPATH += $$PWD
 
 HEADERS += \
     $$PWD/cicontextbutton.h \
-    $$PWD/ciconbutton.h \
     $$PWD/cbasewindow.h \
 	$$PWD/ctitlebar.h \
 	$$PWD/cstatusbar.h \
@@ -12,10 +11,10 @@ HEADERS += \
 	$$PWD/cdialog.h \
 	$$PWD/cfloatwindow.h \
 	$$PWD/cskinmanager.h \
+    $$PWD/ciconbutton.h
 
 SOURCES += \
     $$PWD/cicontextbutton.cpp \
-    $$PWD/ciconbutton.cpp \
     $$PWD/cbasewindow.cpp \
 	$$PWD/ctitlebar.cpp \
 	$$PWD/cstatusbar.cpp \
@@ -25,4 +24,5 @@ SOURCES += \
 	$$PWD/cdialog.cpp \
 	$$PWD/cfloatwindow.cpp \
         $$PWD/cskinmanager.cpp \
+    $$PWD/ciconbutton.cpp
 

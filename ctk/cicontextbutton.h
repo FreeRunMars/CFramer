@@ -2,21 +2,20 @@
 #define CPUSHBUTTON_H
 
 #include <QObject>
-#include <QWidget>
 #include <QPushButton>
+#include <QWidget>
 
-class CPushButton : public QPushButton
-{
-public:
-    explicit CPushButton(QWidget *parent);
+class CPushButton : public QPushButton {
+ public:
+  explicit CPushButton(QWidget *parent);
 
-signals:
+ signals:
 
-public slots:
+ public slots:
 
-private:
-    void initUi();
-    void initConnect();
+ private:
+  void initUi();
+  void initConnect();
 };
 
-#endif // CPUSHBUTTON_H
+#endif  // CPUSHBUTTON_H
